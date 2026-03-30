@@ -1,0 +1,1 @@
+MarineProcure is a full-stack MERN (MongoDB, Express, React, Node.js) application designed to simplify the marine procurement process. It enables users to create and manage purchase requests by capturing essential details such as vessel name, department, port, priority, and buyer remarks. The system ensures organized tracking and efficient handling of procurement workflows.
