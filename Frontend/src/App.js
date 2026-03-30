@@ -5,6 +5,7 @@ import Home from "./Home.jsx";
 import ContactUs from "./ContactUs.jsx";
 import AboutUs from "./AboutUs.jsx";
 import CreateRequest from "./CreateRequest.jsx";
+import MyRequests from "./MyRequests.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/about-us" element={<AboutUs/>} />
           <Route path="/contact-us" element={<ContactUs/>}/>
           <Route path="/create-request" element={<CreateRequest/>} />
+          <Route path="/my-orders" element={<MyRequests/>} />
         </Routes>
      
     </div>

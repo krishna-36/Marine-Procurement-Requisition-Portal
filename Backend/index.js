@@ -58,6 +58,12 @@ app.post("/createRequest", (req,res)=>{
     }).catch(()=>{})
 });
 
+app.get("/get-my-orders", async (req, res) => {
+    const allOrders = await requestCollection.find();
+    console.log("my requests", allOrders);
+    res.send(allOrders);
+});
+
 app.listen(7000, ()=>{
     console.log("Server started at port no. 7000")
 });

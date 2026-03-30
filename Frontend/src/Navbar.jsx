@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./App.css";
+import UserInfo from "./UserInfo.jsx";
 
 function Navbar() {
   return (
@@ -23,11 +24,9 @@ function Navbar() {
         </NavLink>
         <NavLink to={"/contact-us"} className="navLinks">
           Contact Us
-        </NavLink>
+        </NavLink> 
       </div>
-      <div className="profile">
-        <p>UserName</p>
-      </div>
+      <UserInfo></UserInfo>
     </div>
   );
 }
