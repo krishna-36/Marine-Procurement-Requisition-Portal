@@ -20,6 +20,11 @@ function Signup() {
     console.log(signupData);
 
     function handleSignup() {
+      if(signupData?.email || signupData?.password || signupData?.name)
+      {
+        alert("Please fill all required details");
+        return;
+      }
         axios.post("http://localhost:7000/signup",signupData).then((res)=>{
             if(res.status === 200)
             {

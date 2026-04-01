@@ -92,6 +92,22 @@ app.post("/signup", (req, res) => {
     .catch();
 });
 
+app.post("/login", (req, res) => {
+  console.log("req", req.body);
+  signupCollection
+    .findOne({ email: req.body.email })
+    .then((isAuthorized) => {
+      if (isAuthorized) {
+        res.send("authorized");
+      } else {
+        res.send("unauthorized");
+      }
+    })
+    .catch((exe) => {
+      res.send("Something went wrong, Please try again later");
+    });
+});
+
 app.listen(7000, () => {
   console.log("Server started at port no. 7000");
 });

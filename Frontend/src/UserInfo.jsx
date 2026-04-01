@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from 'react-router-dom';
+import Cookie from 'js-cookie';
 
 export default function UserInfo() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -45,7 +46,10 @@ export default function UserInfo() {
       >
         <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleOrder}>My Orders</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={()=>{
+            Cookie.remove("isUserVerified");
+            window.location.href="/";
+        }}>Logout</MenuItem>
       </Menu>
     </div>
   );

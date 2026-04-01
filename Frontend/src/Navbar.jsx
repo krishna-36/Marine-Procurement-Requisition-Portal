@@ -2,8 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./App.css";
 import UserInfo from "./UserInfo.jsx";
+import Cookies from "js-cookie";
 
 function Navbar() {
+  const isAuthorizedUser = Cookies.get("isUserVerified");
+
   return (
     <div className="navbarWrapper">
       <div className="logosection">
@@ -24,16 +27,29 @@ function Navbar() {
         </NavLink>
         <NavLink to={"/contact-us"} className="navLinks">
           Contact Us
-        </NavLink> 
-        <NavLink to={"/login"} className="navLinks">
-          Login
         </NavLink>
-        <NavLink to={"/signup"} className="navLinks">
-          Sign Up
-        </NavLink>
-        
+
+        {isAuthorizedUser === "authorized" ? (
+          <></>
+        ) : (
+          <NavLink to={"/login"} className="navLinks">
+            Login
+          </NavLink>
+        )}
+
+        {isAuthorizedUser === "authorized" ? (
+          <></>
+        ) : (
+          <NavLink to={"/signup"} className="navLinks">
+            Sign Up
+          </NavLink>
+        )}
+
       </div>
-      <UserInfo></UserInfo>
+      {
+        isAuthorizedUser === "authorized" ? <UserInfo></UserInfo> : <></>
+      }
+      
     </div>
   );
 }
