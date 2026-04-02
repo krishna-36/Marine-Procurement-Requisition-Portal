@@ -570,3 +570,20 @@ textarea.input-field {
   gap: 30px;
 }
 
+.userInfo
+{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.userDetails
+{
+  font-size: 14px;
+  line-height: 20px;
+}
+
